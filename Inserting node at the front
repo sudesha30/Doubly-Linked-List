@@ -1,0 +1,12 @@
+// insert node at the front
+void insertFront(struct Node** head, int data) {
+  // allocate memory for newNode
+  struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+
+  newNode->data = data;
+  newNode->next = (*head);
+  newNode->prev = NULL;
+  if ((*head) != NULL)
+    (*head)->prev = newNode;
+  (*head) = newNode;
+}
